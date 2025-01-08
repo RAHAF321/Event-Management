@@ -12,7 +12,7 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name="tlb_event")
+@Table(name = "tlb_event")
 public class Event {
 
     @Id
@@ -23,50 +23,12 @@ public class Event {
 
     private String description;
 
-    @Column(name="entry_fee")
+    @Column(name = "entry_fee")
     private Double fee;
 
-    @JsonFormat(pattern="yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date startDate;
 
-    @JsonFormat(pattern="yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date endDate;
-
-    public String getName() {
-        return name;
-    }
-    public String getDescription() {
-        return description;
-    }
-    public Date getStartDate() {
-        return startDate;
-    }
-    public Date getEndDate() {
-        return endDate;
-    }
-
-    public Double getFee() {
-        return fee;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public void setFee(Double fee) {
-        this.fee = fee;
-    }
-
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
-    }
-
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
-    }
-
 }
-

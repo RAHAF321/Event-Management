@@ -31,15 +31,15 @@ public class EventServiceImpl implements EventService {
 
     @Override
     public Event updateEvent(Event event, Long id) {
-        Event e=getEventById(id);
-        e.setName(event.getName()!=null? event.getName():e.getName());
-        e.setDescription(event.getDescription()!=null? event.getDescription():e.getDescription());
-        e.setFee(event.getFee()!=null ? event.getFee():e.getFee());
-        e.setStartDate(event.getStartDate()!=null?event.getStartDate():e.getStartDate());
-        e.setEndDate(event.getEndDate()!=null?event.getEndDate():e.getEndDate());
-        eventRepository.save(e);
-        return e;
+        Event e = getEventById(id);
+        if (event.getName() != null) e.setName(event.getName());
+        if (event.getDescription() != null) e.setDescription(event.getDescription());
+        if (event.getFee() != null) e.setFee(event.getFee());
+        if (event.getStartDate() != null) e.setStartDate(event.getStartDate());
+        if (event.getEndDate() != null) e.setEndDate(event.getEndDate());
+        return eventRepository.save(e);
     }
+
 
     @Override
     public void deleteEvent(long id) {

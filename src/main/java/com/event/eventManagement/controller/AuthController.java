@@ -3,6 +3,7 @@ package com.event.eventManagement.controller;
 import com.event.eventManagement.entity.AuthModel;
 import com.event.eventManagement.entity.User;
 import com.event.eventManagement.service.UserService;
+import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -31,6 +32,11 @@ public class AuthController {
     @PostMapping("/register")
     public ResponseEntity<User> register(@RequestBody User u){
         return new ResponseEntity<>(userService.createUser(u), HttpStatus.CREATED);
+    }
+
+    @PostMapping("/authenticate")
+    public Authentication authentication(Authentication authentication){
+        return authentication;
     }
 
 }

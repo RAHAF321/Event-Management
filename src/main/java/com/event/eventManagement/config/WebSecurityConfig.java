@@ -26,7 +26,8 @@ public class WebSecurityConfig {
         return http.cors(Customizer.withDefaults())
                 //comment the below line to disable csrf protection against POST, PUT, DELETE requests
                 .csrf(csrf->csrf.disable())
-                .authorizeHttpRequests(request->request.anyRequest().authenticated())
+                .authorizeHttpRequests(request->request.requestMatchers("/login","register").permitAll()
+                        .anyRequest().authenticated())
                 .sessionManagement(session->session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .httpBasic(Customizer.withDefaults())
                 .build();

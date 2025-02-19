@@ -20,7 +20,9 @@ Event Management Application for following operation:
 
 Basic Authentication (in header send base64 encoded username and password) Implemented has many flaus like: 
 -->Does'nt have expiry date 
+
 -->Does not contain authorization information
+
 -->can be easily decoded
 
 So, tried with JWT token with OAuth2 resource server
